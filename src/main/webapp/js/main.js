@@ -1,5 +1,5 @@
 $(document).ready(function () {
     $('#navigation').click(function () {
-        $('ul li iframe').toggleClass('active');
+        $('article iframe').toggleClass('active');
     });
 });
