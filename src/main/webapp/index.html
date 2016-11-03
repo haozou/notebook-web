@@ -1,10 +1,18 @@
 <html>
 <head>
+    <title>Notebook Demo</title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
     <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="js/main.js"></script>
 </head>
+
 <body>
 <header>
     <h1>GoPro</h1>
@@ -16,14 +24,50 @@
                 <img src="./images/logo.png" alt="gopro_logo">
             </a>
         </li>
-        <li id='navigation'>
-            <a href="http://localhost:10654/notebooks/Untitled.ipynb" target="myIframe">Notebook</a>
+        <li id='notebook'>
+            <button class="btn btn-default" data-href="/delete.php?id=54" data-toggle="modal" data-target="#configuration-modal">
+                Notebook
+            </button>
         </li>
     </ul>
 </nav>
+
 <article>
-    <iframe name="myIframe" src="http://localhost:10654/notebooks/Untitled.ipynb"></iframe>
+    <iframe id="iframe" name="myIframe" src="www.example.com"></iframe>
 </article>
+
+<!-- Modal -->
+<div class="modal fade" id="configuration-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">Configuration</h4>
+            </div>
+
+            <div class="modal-body">
+                <div>
+                    parameter 1
+                    <input class="configuration1" placeholder="configuration 1" />
+                </div>
+                <div>
+                    parameter 2
+                    <input class="configuration2" placeholder="configuration 2" />
+                </div>
+                <div>
+                    parameter 3
+                    <input class="configuration3" placeholder="configuration 3" />
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+                <a class="btn btn-danger btn-ok">Confirm</a>
+            </div>
+        </div>
+    </div>
+</div>
 <footer>Copyright @ baobao.com</footer>
 </body>
 </html>
