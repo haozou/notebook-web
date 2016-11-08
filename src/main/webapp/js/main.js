@@ -1,22 +1,21 @@
 $(document).ready(function () {
     $('.btn-ok').click(function () {
+        var username = $('.username').val();
+        var image_name = $('.image_name').val();
+        var command = $('.command').val();
         $.ajax({
             type: "POST",
-            url: 'www.example.com', // post url
-            data: {}, // the data passed to post
-            success: function (data) {
-                var param1 = $('.configuration1').val();
-                var param2 = $('.configuration2').val();
-                var param3 = $('.configuration3').val();
-
-                var url = "www.example.com" + "?configuration1=" + param1
-                    + "configuration2=" + param2
-                    + "configuration3=" + param3;
+            dataType: "json",
+            url: 'http://mbr-31574:8000/api/v1.0/run_notebook_in_docker', // post url
+            data: {"username": username,
+                   "image_name": image_name,
+                   "command": command}, // the data passed to post
+            success: function (result) {
 
                 if (!$('#iframe').hasClass('active')) {
                     $('#iframe').addClass('active');
                 }
-                $('#iframe').attr('src', url);
+                $('#iframe').attr('src', "http://localhost:" + result.port + "/notebooks/test2.ipynb");
 
                 $('#configuration-modal').modal('hide');
             }

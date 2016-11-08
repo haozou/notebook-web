@@ -127,6 +127,10 @@
                 <webApp>
                     <contextPath>/notebook</contextPath>
                 </webApp>
+                <httpConnector>
+                    <port>9000</port>
+                    <host>mbr-31574</host>
+                </httpConnector>
             </configuration>
         </plugin>
         </plugins>
