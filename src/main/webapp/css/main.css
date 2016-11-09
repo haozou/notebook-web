@@ -27,6 +27,11 @@ li {
     float: left;
     border-right:2px;
     text-align: center;
+    width: 50%;
+}
+
+li#notebook {
+    margin-top: 50px;
 }
 
 li a {
@@ -46,4 +51,15 @@ article iframe {
 
 article iframe.active {
     display: block;
+}
+
+.modal-body span {
+    display: inline-block;
+    width: 100px;
+    padding: 10px;
+}
+
+.modal-body input {
+    width: 315px;
+    padding-left: 10px;
 }
